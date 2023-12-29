@@ -1,9 +1,13 @@
 import { Router } from 'express';
-import * as controllers from '../controllers';
+import { registerTemplate } from './route.template';
 
 const router = Router();
 
-// Define your routes here. For example:
-// router.get('/endpoint', controllers.someControllerFunction);
+export const registerRoutes = () => {
+    const router = Router();
+    router.use('/', registerTemplate());
 
-export default router;
+    return router;
+};
+
+export default registerRoutes;

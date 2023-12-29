@@ -1,10 +1,10 @@
 import express from 'express';
-import routes from './routes';
+import registerRoutes from './routes';
 
 const app = express();
 
 app.use(express.json());
-app.use('/api', routes);
+app.use('/template', registerRoutes());
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
